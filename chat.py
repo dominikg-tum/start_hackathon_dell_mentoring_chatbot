@@ -3,7 +3,6 @@ from openai import OpenAI
 import random
 import time
 
-
 # Streamed response emulator
 def response_generator():
     response = random.choice(

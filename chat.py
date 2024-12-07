@@ -1,4 +1,5 @@
 import streamlit as st
+from openai import OpenAI
 import random
 import time
 
@@ -16,8 +17,14 @@ def response_generator():
         yield word + " "
         time.sleep(0.05)
 
+st.title("Your DELL Mentoring Chatbot by TEAM 115 - because we give 115%. 🚀")
 
-st.title("Simple chat")
+# Set OpenAI API key from Streamlit secrets
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+
+# Set a default model
+if "openai_model" not in st.session_state:
+    st.session_state["openai_model"] = "gpt-3.5-turbo"
 
 # Initialize chat history
 if "messages" not in st.session_state:

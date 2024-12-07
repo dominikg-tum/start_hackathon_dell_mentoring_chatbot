@@ -4,6 +4,7 @@ DELL's challenge during the START Hackathon 2024: A chatbot to help startups wit
 install:
 
 pip install streamlit
+pip install openai streamlit
 
 run it:
 
